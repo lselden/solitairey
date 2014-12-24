@@ -1,3 +1,4 @@
+#Solitairey
 Solitairey is a JavaScript Solitaire collection using YUI 3.
 
 Current games include:
@@ -18,3 +19,5 @@ Current games include:
 - Tri Towers
 - Will O' The Wisp
 - Yukon
+
+I've Solitairey in order to create a game with more simple visuals.
