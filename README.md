@@ -22,4 +22,4 @@ Current games include:
 
 I’ve Solitairey in order to create a game with more simple visuals.
 
-Icons created by Diego Trindade from the Noun Project.
+Icons created by Diego Trindade & Haik Dettmann from the Noun Project.
