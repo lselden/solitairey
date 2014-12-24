@@ -427,9 +427,9 @@ Yukon is a very skillful solitaire focused on moving piles instead of single car
 			</li>
 		</ul>
 		</div>
-                <button class=close-chooser>Return to game</button>
+                <button class="close-chooser">Return to game</button>
 	</div>
-        <div id=options-chooser class="hidden popup"><div class="popup-content">
+        <div id="options-chooser" class="hidden popup"><div class="popup-content">
           <div class="tabview">
             <ul>
               <li><a href="#play-options">Gameplay</a></li>
@@ -437,108 +437,108 @@ Yukon is a very skillful solitaire focused on moving piles instead of single car
               <li><a href="#background-options">Backgrounds</a></li>
             </ul>
             <div>
-              <div id=play-options>
+              <div id="play-options">
                 <p>
-                  <label for=animateCards-toggle>Animate Cards</label>
-                  <input id=animateCards-toggle type=checkbox />
+                  <label for="animateCards-toggle">Animate Cards</label>
+                  <input id="animateCards-toggle" type="checkbox" />
                 </p>
                 <p>
-                  <label for=autoplay-toggle>Autoplay Solved Games</label>
-                  <input id=autoplay-toggle type=checkbox />
+                  <label for="autoplay-toggle">Autoplay Solved Games</label>
+                  <input id="autoplay-toggle" type="checkbox" />
                 </p>
                 <p>
-                  <label for=autoFlip-toggle>Automatically Flip Cards</label>
-                  <input id=autoFlip-toggle type=checkbox />
+                  <label for="autoFlip-toggle">Automatically Flip Cards</label>
+                  <input id="autoFlip-toggle" type="checkbox" />
                 </p>
                 <p>
-                  <label for=enableSolver-toggle>Enable Solver</label>
-                  <input id=enableSolver-toggle type=checkbox />
+                  <label for="enableSolver-toggle">Enable Solver</label>
+                  <input id="enableSolver-toggle" type="checkbox" />
                 </p>
               </div>
-              <div id=graphics-options>
+              <div id="graphics-options">
                 <h3>Available Decks</h3>
-                <ul class=cards>
+                <ul class="cards">
                 </ul>
               </div>
-              <div id=background-options>
+              <div id="background-options">
                 <h3>Backgrounds</h3>
-                <ul class=backgrounds>
+                <ul class="backgrounds">
                 </ul>
               </div>
             </div>
           </div>
           <button class="popup-button close-chooser">OK</button>
 	</div></div>
-	<img src=loading.gif class="loading hidden">
+	<img src="loading.gif" class="loading hidden">
 	<div class="chromestore hidden">
 	
-		<a class=hide>[Hide]</a>
-                <a href=https://chrome.google.com/webstore/detail/dofbnmhnoodmmlhflbcihicmbnhhinhp>
-                  <img src=ChromeWebStore_Badge_v2_206x58.png>
+		<a class="hide">[Hide]</a>
+                <a href="https://chrome.google.com/webstore/detail/dofbnmhnoodmmlhflbcihicmbnhhinhp">
+                  <img src="ChromeWebStore_Badge_v2_206x58.png">
                 </a>
 	
 	</div>
-	<div id=confirmation class="hidden">
-		<div id=confirmation-popup class="popup">
+	<div id="confirmation" class="hidden">
+		<div id="confirmation-popup" class="popup">
 			<div class="popup-content">
-				<p id=confirmation-prompt></p>
+				<p id="confirmation-prompt"></p>
 				<div class="popup-bottom-button-bar">
-					<button id=confirmation-deny class="popup-button">No</button>
-					<button id=confirmation-affirm class="popup-button">Yes</button>
+					<button id="confirmation-deny" class="popup-button">No</button>
+					<button id="confirmation-affirm" class="popup-button">Yes</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id=stats-popup class="hidden popup">
+	<div id="stats-popup" class="hidden popup">
 		<div class="popup-content">
 			<div class="popup-title-group">
-				<h1 class="stats-title"><span id=stats-game></span> stats</h1>
+				<h1 class="stats-title"><span id="stats-game"></span> stats</h1>
 				<ul class="popup-title-content hidden">
 				</ul>
 			</div>
 			<div class="infogroup">
 				<div class="infopanel">
 					<p class="panelli">
-						<span class=panellabel>Games played</span><span id=stats-gamesplayed class=panelvalue></span>
+						<span class="panellabel">Games played</span><span id="stats-gamesplayed" class="panelvalue"></span>
 					</p>
 					<p class="panelli">
-						<span class=panellabel>Win percentage</span><span id=stats-winpercentage class=panelvalue></span>
+						<span class="panellabel">Win percentage</span><span id="stats-winpercentage" class="panelvalue"></span>
 					</p>
 					<p class="panelli">
-						<span class=panellabel>Wins</span><span id=stats-wins class=panelvalue></span>
+						<span class="panellabel">Wins</span><span id="stats-wins" class="panelvalue"></span>
 					</p>
 					<p class="panelli">
-						<span class=panellabel>Loses</span><span id=stats-loses class=panelvalue></span>
+						<span class="panellabel">Loses</span><span id="stats-loses" class="panelvalue"></span>
 					</p>
 					<p class="panelli">
-						<span class=panellabel>Current streak</span><span id=stats-currentstreak class=panelvalue></span>
+						<span class="panellabel">Current streak</span><span id="stats-currentstreak" class="panelvalue"></span>
 					</p>
 					<p class="panelli">
-						<span class=panellabel>Best streak</span><span id=stats-beststreak class=panelvalue></span>
+						<span class="panellabel">Best streak</span><span id="stats-beststreak" class="panelvalue"></span>
 					</p>
 				</div>
 			</div>
 			<div class="popup-bottom-button-bar">
 				<button class="popup-button close-chooser">OK</button>
-				<button id=stats-reset class="popup-button">Reset</button>
+				<button id="stats-reset" class="popup-button">Reset</button>
 			</div>
 		</div>
 	</div>
-	<div id=win-display class="hidden">
+	<div id="win-display" class="hidden">
 		<p>You win! You're awesome.</p>
-		<h2><span id=win-display-game></span> stats:</h2>
+		<h2><span id="win-display-game"></span> stats:</h2>
 		<ul>
-			<li>Current win streak: <span id=win-display-streak class='streak'></span></li>
-			<li>Total wins: <span id=win-display-wins class='wins'></span></li>
-			<li>Total loses: <span id=win-display-loses class='loses'></span></li>
-			<div class=replay_options>
-				<button class=new_deal>New Deal</button>
-				<button class=choose_game>Choose Game</button>
+			<li>Current win streak: <span id="win-display-streak" class='streak'></span></li>
+			<li>Total wins: <span id="win-display-wins" class='wins'></span></li>
+			<li>Total loses: <span id="win-display-loses" class='loses'></span></li>
+			<div class="replay_options">
+				<button class="new_deal">New Deal</button>
+				<button class="choose_game">Choose Game</button>
 			</div>
 		</ul>
 	</div>
-	<div id=seed-value-bar class="top-menu hidden">
-		Foundations start with <span id=seed-value></span>
+	<div id="seed-value-bar" class="top-menu hidden">
+		Foundations start with <span id="seed-value"></span>
 	</div>
 
 	<!--<script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>-->
