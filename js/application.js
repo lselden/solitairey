@@ -471,72 +471,18 @@
 
 	Themes = {
 		all: {
-			air: {
-				sizes: [141],
-				141: {
-					hiddenRankHeight: 17,
-					rankHeight: 55,
-					dimensions: [141, 199]
-				}
-			},
-
-			ancient_egyptians: {
+			"dots": {
 				sizes: [148],
 				148: {
 					hiddenRankHeight: 17,
-					rankHeight: 50,
+					rankHeight: 55,
 					dimensions: [148, 200]
 				}
 			},
-
-			dondorf: {
-				sizes: [61, 79, 95, 122],
-				61: {
-					hiddenRankHeight: 7,
-					rankHeight: 25,
-					dimensions: [61, 95]
-				},
-
-				79: {
-					hiddenRankHeight: 10,
-					rankHeight: 32,
-					dimensions: [79, 123]
-				},
-
-				95: {
-					hiddenRankHeight: 12,
-					rankHeight: 38,
-					dimensions: [95, 148]
-				},
-
-				122: {
-					hiddenRankHeight: 15,
-					rankHeight: 48,
-					dimensions: [122, 190]
-				}
-			},
-
-			"jolly-royal": {
-				sizes: [144],
-				144: {
-					hiddenRankHeight: 20,
-					rankHeight: 52,
-					dimensions: [144, 200]
-				}
-			},
-
-			paris: {
-				sizes: [131],
-				131: {
-					hiddenRankHeight: 18,
-					rankHeight: 48,
-					dimensions: [131, 204]
-				}
-			}
 		},
 
 		current: null,
-		defaultTheme: "jolly-royal",
+		defaultTheme: "dots",
 
 		/* theres no mechanism yet to load the appropriate deck depending on the scaled card width
 		 * so we just load the largest cards and call it a day :/
