@@ -20,4 +20,6 @@ Current games include:
 - Will O' The Wisp
 - Yukon
 
-I've Solitairey in order to create a game with more simple visuals.
+I’ve Solitairey in order to create a game with more simple visuals.
+
+Icons created by Diego Trindade from the Noun Project.
