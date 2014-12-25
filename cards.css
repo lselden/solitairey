@@ -544,16 +544,11 @@ button:hover {
 	padding: 7px;
 	border-radius: 7px;
 	background: #222;
-	box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
 	z-index: 1001;
 }
 
 .popup-content {
 	background-color: #fff;
-	background: -webkit-linear-gradient(white 50%, #ddd);
-	background: -moz-linear-gradient(white 50%, #ddd);
-	background: -ms-linear-gradient(white 50%, #ddd);
-	background: -o-linear-gradient(white 50%, #ddd);
 	padding: 20px 20px 70px 20px;
 	font-family: 'Karla';
 	font-size: 20px;
@@ -633,10 +628,6 @@ button:hover {
 	width: auto;
 	float: right;
 	background-color: #ddd;
-	background-image: -webkit-linear-gradient(#f0f0f0 50%, #bbb);
-	background-image: -moz-linear-gradient(#f0f0f0 50%, #bbb);
-	background-image: -ms-linear-gradient(#f0f0f0 50%, #bbb);
-	background-image: -o-linear-gradient(#f0f0f0 50%, #bbb);
 	border:0;
 }
 
@@ -752,7 +743,6 @@ a.external {
 	background: white;
 	padding: 15px 0px 15px 40px;
 	margin-top: -5px;
-	box-shadow: 0 5px 5px 1px rgba(50, 50, 50, 0.5);
 	z-index: 5;
 }
 
