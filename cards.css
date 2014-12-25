@@ -83,6 +83,10 @@ a {
 	border-right: 1px solid #444;
 }
 
+#menu li.end {
+	border: none;
+}
+
 #menu li:hover {
 	background: #bbb
 }
