@@ -65,11 +65,11 @@
     </li>
   </ul>
   <div id="rules-popup" class="hidden popup"><div class="popup-content">
-    <button class="popup-button close-chooser">OK</button>
+          <button class="popup-button close-chooser">OK</button>
   </div></div>
   <div id="about-popup" class="hidden popup"><div class="popup-content">
           <p>
-          Solitairey is a collection of Solitaire games created by me, <a class="external" href="http://www.facebook.com/lordpharrington">Paul Harrington</a>.<br />
+          Solitairey is a collection of Solitaire games created by me, <a class="external" href=http://www.facebook.com/lordpharrington>Paul Harrington</a>.<br />
           I found the book <a class="external" href="http://www.amazon.com/gp/product/1314837672/ref=as_li_qf_sp_asin_tl?ie=UTF8&tag=solitairey-20&linkCode=as2&camp=217145&creative=399373&creativeASIN=1314837672">150 Ways to Play Solitaire</a> in an old bookstore one day and was fascinated by its huge variety of solitaires, having only known about Freecell and Klondike from playing on the computer.
           Solitairey was a way for me to try out the games I saw that looked fun, while providing an easy way for other people to play.
           </p>
@@ -91,8 +91,8 @@
           <hr />
           <p>
           If you like these games, click the Facebook like button and tell your friends about it!
-          You can also find this on the <a class="external" href="https://chrome.google.com/webstore/detail/dofbnmhnoodmmlhflbcihicmbnhhinhp">Chrome Web Store</a>; install the app, rate it, and leave your comments.
-          If you don't have Chrome, still send feedback by emailing me at <a class="external" href="mailto:paul.c.harrington@gmail.com">paul.c.harrington@gmail.com</a> or <a class="external" href="http://www.facebook.com/lordpharrington">messaging me on Facebook</a>.
+          You can also find this on the <a class="external" href=https://chrome.google.com/webstore/detail/dofbnmhnoodmmlhflbcihicmbnhhinhp>Chrome Web Store</a>; install the app, rate it, and leave your comments.
+          If you don't have Chrome, still send feedback by emailing me at <a class="external" href="mailto:paul.c.harrington@gmail.com">paul.c.harrington@gmail.com</a> or <a class="external" href=http://www.facebook.com/lordpharrington>messaging me on Facebook</a>.
           Tell me any games or features you want added, report any bugs you find, or just let me know I'm doing a wonderful job :)
           Have a great day.
           </p>
@@ -461,26 +461,34 @@ The Fan plays like La Belle Lucie, but with two twists. If you clear a fan, you 
               </div>
               <div id="background-options">
                 <h3>Backgrounds</h3>
-                <ul class="backgrounds">
+                <ul class=backgrounds>
                 </ul>
               </div>
             </div>
           </div>
           <button class="popup-button close-chooser">OK</button>
   </div></div>
-
+  <img src=loading.gif class="loading hidden">
+  <div class="chromestore hidden">
+  
+    <a class=hide>[Hide]</a>
+                <a href=https://chrome.google.com/webstore/detail/dofbnmhnoodmmlhflbcihicmbnhhinhp>
+                  <img src=ChromeWebStore_Badge_v2_206x58.png>
+                </a>
+  
+  </div>
   <div id="confirmation" class="hidden">
     <div id="confirmation-popup" class="popup">
       <div class="popup-content">
         <p id="confirmation-prompt"></p>
         <div class="popup-bottom-button-bar">
-          <button id="confirmation-deny" class="popup-button">No</button>
-          <button id="confirmation-affirm" class="popup-button">Yes</button>
+          <button id=confirmation-deny class="popup-button">No</button>
+          <button id=confirmation-affirm class="popup-button">Yes</button>
         </div>
       </div>
     </div>
   </div>
-  <div id="stats-popup" class="hidden popup">
+  <div id=stats-popup class="hidden popup">
     <div class="popup-content">
       <div class="popup-title-group">
         <h1 class="stats-title"><span id="stats-game"></span> stats</h1>
@@ -490,19 +498,19 @@ The Fan plays like La Belle Lucie, but with two twists. If you clear a fan, you 
       <div class="infogroup">
         <div class="infopanel">
           <p class="panelli">
-            <span class="panellabel">Games played</span><span id="stats-gamesplayed" class="panelvalue"></span>
+            <span class=panellabel>Games played</span><span id="stats-gamesplayed" class="panelvalue"></span>
           </p>
           <p class="panelli">
-            <span class="panellabel">Win percentage</span><span id="stats-winpercentage" class="panelvalue"></span>
+            <span class=panellabel>Win percentage</span><span id="stats-winpercentage" class="panelvalue"></span>
           </p>
           <p class="panelli">
-            <span class="panellabel">Wins</span><span id="stats-wins" class="panelvalue"></span>
+            <span class=panellabel>Wins</span><span id="stats-wins" class="panelvalue"></span>
           </p>
           <p class="panelli">
-            <span class="panellabel">Loses</span><span id="stats-loses" class="panelvalue"></span>
+            <span class=panellabel>Loses</span><span id="stats-loses" class="panelvalue"></span>
           </p>
           <p class="panelli">
-            <span class="panellabel">Current streak</span><span id="stats-currentstreak" class="panelvalue"></span>
+            <span class=panellabel>Current streak</span><span id="stats-currentstreak" class="panelvalue"></span>
           </p>
           <p class="panelli">
             <span class="panellabel">Best streak</span><span id="stats-beststreak" class="panelvalue"></span>
@@ -520,9 +528,9 @@ The Fan plays like La Belle Lucie, but with two twists. If you clear a fan, you 
     <h2><span id="win-display-game"></span> stats:</h2>
     <ul>
       <li>Current win streak: <span id="win-display-streak" class='streak'></span></li>
-      <li>Total wins: <span id="win-display-wins" class='wins'></span></li>
-      <li>Total loses: <span id="win-display-loses" class='loses'></span></li>
-      <div class="replay_options">
+      <li>Total wins: <span id=win-display-wins class='wins'></span></li>
+      <li>Total loses: <span id=win-display-loses class='loses'></span></li>
+      <div class=replay_options>
         <button class="new_deal">New Deal</button>
         <button class="choose_game">Choose Game</button>
       </div>
