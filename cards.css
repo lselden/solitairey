@@ -92,6 +92,10 @@ a {
 	border-radius: 0 0 0 15px;
 }
 
+#menu li:hover {
+	background: #bbb
+}
+
 #menu a {
 	display: block;
 	margin: 7px 0 -7px;
