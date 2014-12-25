@@ -65,18 +65,12 @@ a {
 .top-menu {
 	border-style: solid;
 	background: #eee;
-	background: -webkit-linear-gradient(#fff, #ddd);
-	background: -moz-linear-gradient(#fff, #ddd);
-	background: -o-linear-gradient(#fff, #ddd);
-	background: -ms-linear-gradient(#fff, #ddd);
-	box-shadow: 0 1px 12px 0.5px #000;
 }
 
 #menu {
 	display: table;
 	height: 35px;
 	margin: 0 auto;
-	border-radius: 0 0 15px 15px;
 	color: #000;
 	font-weight: bold;
 	font-size: 16px;
@@ -96,13 +90,6 @@ a {
 
 #menu li.begin {
 	border-radius: 0 0 0 15px;
-}
-
-#menu li:hover {
-	background: #bbb -webkit-linear-gradient(#fff, #bbb);
-	background: #bbb -moz-linear-gradient(#fff, #bbb);
-	background: #bbb -ms-linear-gradient(#fff, #bbb);
-	background: #bbb -o-linear-gradient(#fff, #bbb);
 }
 
 #menu a {
