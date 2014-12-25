@@ -14278,7 +14278,7 @@ YUI.add("json-stringify", function(b) {
     d = /[\x00-\x07\x0b\x0e-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,
     n = [
       [/\\/g, "\\\\"],
-      [/\"/g, '\\"'],
+      [/\\/g, '\\"'],
       [/\x08/g, "\\b"],
       [/\x09/g, "\\t"],
       [/\x0a/g, "\\n"],
