@@ -83,15 +83,6 @@ a {
 	border-right: 1px solid #444;
 }
 
-#menu li.end {
-	border: none;
-	border-radius: 0 0 15px 0;
-}
-
-#menu li.begin {
-	border-radius: 0 0 0 15px;
-}
-
 #menu li:hover {
 	background: #bbb
 }
