@@ -47,6 +47,7 @@ a {
 
 .playable {
 	cursor: pointer;
+	z-index: 20;
 }
 
 .playable:hover {
