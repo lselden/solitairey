@@ -23567,14 +23567,6 @@ YUI.add("king-albert", function(d) {
             dimensions: [148, 200]
           }
         },
-        "jolly-royal": {
-          sizes: [144],
-          144: {
-            hiddenRankHeight: 20,
-            rankHeight: 52,
-            dimensions: [144, 200]
-          }
-        },
       },
       current: null,
       defaultTheme: "dots",
