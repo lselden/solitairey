@@ -5,11 +5,14 @@
   <title>Solitairey</title>
   
   <meta name="description" content="A modern solitaire collection for the web. Built with HTML5 and Javascript.">
-  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
   <link rel="apple-touch-icon" href="images/ios-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <link rel="stylesheet" href="css/cards.css">
   <link href='http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  
+  <script language="javascript">document.ontouchmove = function(e){ e.preventDefault(); }</script>
 </head>
 
 <body>
