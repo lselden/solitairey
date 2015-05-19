@@ -986,11 +986,4 @@
 	};
 
 	yui.use.apply(yui, modules().concat(main));
-    
-    YUI().use('dd-drag', function(Y) {
-        //Selector of the node to make draggable
-        var dd = new Y.DD.Drag({
-            node: '.card'
-        });
-    });
 }());
