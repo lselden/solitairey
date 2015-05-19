@@ -37,6 +37,15 @@ a {
 	display: none;
 }
 
+.card {
+    border: 2px solid gray;
+}
+
+img.stack[src~="dots/148/freeslot.png"] {
+    border: 2px solid #333;
+    background-color: transparent;
+}
+
 .card, .stack {
 	position: absolute;
 }
@@ -50,11 +59,7 @@ a {
 }
 
 .playable:hover {
-	box-shadow: 0 0 6px 4px rgba(255, 252, 143, 0.9);
-	-webkit-transition: box-shadow 0s;
-	-moz-transition: box-shadow 0s;
-	-ms-transition: box-shadow 0s;
-	transition: box-shadow 0s;
+	border: 2px solid #333;
 }
 
 .top-menu {
@@ -70,6 +75,8 @@ a {
 	font-weight: bold;
 	font-size: 16px;
 	list-style: none;
+    border: 2px solid #000;
+    border-top-width: 0px;
 }
 
 #menu li {
@@ -98,7 +105,7 @@ a {
 }
 
 #menu .divider {
-	border-right: #000 solid 2px;
+	border-right: #000 solid 4px;
 }
 
 p {
@@ -140,6 +147,10 @@ p {
 	height: 100%;
 }
 
+#descriptions {
+    text-align: center;
+}
+
 #descriptions div {
 	position: absolute;
 	width: 100%;
@@ -148,27 +159,24 @@ p {
 }
 
 #descriptions li {
-	border: 2px solid #eec;
-	border-radius: 7px;
+	border: 2px solid #333;
 	float:  left;
 	width: 250px;
-	height: 150px;
+	height: 160px;
 	margin: 10px;
-	background-color: #EEC;
-	background-image: -webkit-linear-gradient(#EEC, #a1a172);
-	background-image: -moz-linear-gradient(#EEC, #a1a172);
-	background-image: -ms-linear-gradient(#EEC, #a1a172);
-	background-image: -o-linear-gradient(#EEC, #a1a172);
+	background-color: #CCC;
 	overflow: hidden;
 	cursor: pointer;
 }
 
 #descriptions li:hover {
-	background: #eec;
+	background: #BBB;
 }
 
-#game-chooser .selected {
-	background: #fff;
+#game-chooser .selected,
+#descriptions .selected:hover {
+	background: #333;
+    color: white;
 }
 
 .close {
@@ -214,22 +222,19 @@ p {
 }
 
 #solver-bar {
-	width: 500px;
+	width: 400px;
 	height: 15px;
 	padding: 10px;
-	background-color: black;
-	background-image: -webkit-linear-gradient(#000, #222);
-	background-image: -moz-linear-gradient(#000, #222);
-	background-image: -ms-linear-gradient(#000, #222);
-	background-image: -o-linear-gradient(#000, #222);
-	position: fixed;
-	bottom: 0;
-	left: 25%;
-	border-radius: 15px 15px 0 0;
-	color: #ddd;
+	background-color: #EEE;
+    color: #000;
+    border: 2px solid #000;
+    border-bottom-width: 0px;
+    left: 50%; margin-left: -200px;
+    position: fixed;
+    bottom: 0px;
+
 	font-size: 16px;
 	font-weight: bold;
-	box-shadow: 0 1px 12px 0.5px #000;
 }
 
 .indicator {
@@ -239,7 +244,7 @@ p {
 .controls {
 	float: right;
 	height: 20px;
-	margin: -2px 50px 0 0;
+	margin: -2px 0px 0 0;
 	cursor: pointer;
 }
 
@@ -470,22 +475,10 @@ p {
 
 button {
 	font-size: 18px;
-	margin-right: 27px;
-	background-color: #eec;
-	background-image: -webkit-linear-gradient(white, #EEC);
-	background-image: -moz-linear-gradient(white, #EEC);
-	background-image: -ms-linear-gradient(white, #EEC);
-	background-image: -o-linear-gradient(white, #EEC);
-	padding: 6px 17px;
-	border-radius: 5px;
-	box-shadow: inset 0 0 3px 1px #fff;
-	border: #000 solid 1px;
-	text-shadow: 1px 1px 1px white;
+	background-color: #CCC;
+	padding: 10px 20px;
+	border: 2px solid #333 !important;
 	cursor: pointer;
-}
-
-button:hover {
-	box-shadow: none;
 }
 
 .replay-options {
@@ -497,27 +490,6 @@ button:hover {
 .description h3 {display: none;}
 .description p {display: none;}
 
-.chromestore {
-	position: fixed;
-	right: 0;
-	bottom: 0;
-}
-
-.chromestore .hide {
-	display: block;
-	font: 20px 'Karla';
-	text-align: right;
-	padding: 0 7px 5px 0;
-}
-
-.chromestore .hide:hover {
-	color: #EEC;
-}
-
-.chromestore img {
-	background: #fff;
-	display: block;
-}
 
 .popup {
 	width: 700px;
@@ -616,6 +588,37 @@ button:hover {
 	width: 730px;
 }
 
+#options-chooser .popup-content {
+    padding: 0;
+}
+
+#options-chooser #play-options,
+#options-chooser #graphics-options,
+#options-chooser #background-options {
+    border-bottom: 2px solid #333;
+    padding: 20px;
+    background-color: #EFEFEF;
+}
+
+#options-chooser #graphics-options {
+    background-color: #CCC;
+}
+
+#options-chooser label {
+    color: rgba(0,0,0, 0.7);
+    font-size: 0.8em;
+    padding-top: 5px;
+}
+
+#options-chooser h2,
+#options-chooser h3 {
+    color: #333;
+    font-size: 1.0em;
+    border-bottom: 1px solid rgba(0,0,0, 0.7);
+    margin: 0 -20px 10px;
+    padding-left: 20px;
+}
+
 #background {
 	position: fixed;
 	left: 0;
@@ -646,14 +649,6 @@ a.external {
 #rules-popup blockquote {
 	line-height: 1.3;
 	font-size: 18px;
-}
-
-#adleft {
-	left: 0px;
-}
-
-#adright {
-	right: 0px;
 }
 
 .skyscraper {
@@ -748,7 +743,8 @@ a.external {
 	right: 0;
 	height: 15px;
 	padding: 6px 10px 14px 10px;
-	border-radius: 0 0 0 15px;
+    border: 2px solid #333;
+    border-width: 0 0 2px 2px;
 }
 
 #seed-value-bar.bottom {

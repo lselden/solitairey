@@ -1,40 +1,18 @@
 <!doctype html>
-
 <html manifest="cache.manifest">
-  <!--
-  Hi! There's no useful source code on this page :(
-  BUT!! There is at index-dev.html and Solitairey's Github page https://github.com/pharrington/Solitairey :)
-  happy hacking
-  -->
-
 
 <head>
-  <title>Solitairey 2.0</title>
+  <title>Solitairey</title>
+  
   <meta name="description" content="A modern solitaire collection for the web. Built with HTML5 and Javascript.">
-  <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
   <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta property="fb:admins" content="100000659492810">
-        <link rel="stylesheet" href="yui-tabview.css">
+  
   <link rel="stylesheet" href="cards.css">
+  
   <link href='http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-  <![if lt IE 9]>
-  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css">
-  <![endif]>
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-9447574-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
+  
+  <![if lt IE 9]><link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css"><![endif]>
 </head>
 
 <body>
@@ -277,7 +255,7 @@ The Fan plays like La Belle Lucie, but with two twists. If you clear a fan, you 
         </div>
       </li>
       <li id="klondike1t">
-        <h2>Klondike (Vegas Style)</h2>
+        <h2>Vegas Klondike</h2>
         <div class="description klondike1t">
           <div class="layout"></div>
           <h3>Vegas Klondike Solitaire Rules</h3>
@@ -420,55 +398,48 @@ The Fan plays like La Belle Lucie, but with two twists. If you clear a fan, you 
     </div>
     <button class="close-chooser">Return to game</button>
   </div>
-        <div id=options-chooser class="hidden popup"><div class="popup-content">
-          <div class="tabview">
-            <ul>
-              <li><a href="#play-options">Gameplay</a></li>
-              <li><a href="#graphics-options">Cards</a></li>
-              <li><a href="#background-options">Backgrounds</a></li>
-            </ul>
-            <div>
-              <div id="play-options">
-                <p>
-                  <label for=animateCards-toggle>Animate Cards</label>
-                  <input id="animateCards-toggle" type=checkbox />
-                </p>
-                <p>
-                  <label for=autoplay-toggle>Autoplay Solved Games</label>
-                  <input id=autoplay-toggle type=checkbox />
-                </p>
-                <p>
-                  <label for="autoFlip-toggle">Automatically Flip Cards</label>
-                  <input id="autoFlip-toggle" type="checkbox" />
-                </p>
-                <p>
-                  <label for="enableSolver-toggle">Enable Solver</label>
-                  <input id="enableSolver-toggle" type="checkbox" />
-                </p>
-              </div>
-              <div id="graphics-options">
-                <h3>Available Decks</h3>
-                <ul class="cards">
-                </ul>
-              </div>
-              <div id="background-options">
-                <h3>Backgrounds</h3>
-                <ul class=backgrounds>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <button class="popup-button close-chooser">OK</button>
-  </div></div>
-  <img src=loading.gif class="loading hidden">
-  <div class="chromestore hidden">
   
-    <a class=hide>[Hide]</a>
-                <a href=https://chrome.google.com/webstore/detail/dofbnmhnoodmmlhflbcihicmbnhhinhp>
-                  <img src=ChromeWebStore_Badge_v2_206x58.png>
-                </a>
-  
+ 
+<!--wp:options--> 
+  <div id=options-chooser class="hidden popup"><div class="popup-content">
+	  <div id="play-options">
+		  <h2>Gameplay Options</h1>
+			  <div id="antimateCards">
+				  <input id="animateCards-toggle" type=checkbox />
+				  <label for=animateCards-toggle>Animate cards?</label>
+			  </div>
+			  <div id="autoplay">
+				  <input id=autoplay-toggle type=checkbox />
+				  <label for=autoplay-toggle>Autoplay solved games?</label>
+			  </div>
+			  <div id="autoFlip">
+				  <input id="autoFlip-toggle" type="checkbox" />
+				  <label for="autoFlip-toggle">Automatically flip cards?</label>
+			  </div>
+			  <div id="enableSolver">
+				  <input id="enableSolver-toggle" type="checkbox" />
+				  <label for="enableSolver-toggle">Use Solver?</label>
+			  </div>
+		  </div>
+		  
+		  <div id="graphics-options">
+			  <h2>Available Decks</h3>
+			  <ul class="cards">
+			  </ul>
+		  </div>
+		  
+		  <div id="background-options">
+			  <h2>Backgrounds</h3>
+			  <ul class=backgrounds>
+			  </ul>
+		  </div>
+	  </div>
+	  
+	  <button class="popup-button close-chooser">OK</button>
   </div>
+  
+  
+  <img src=loading.gif class="loading hidden">
   <div id="confirmation" class="hidden">
     <div id="confirmation-popup" class="popup">
       <div class="popup-content">
@@ -532,6 +503,104 @@ The Fan plays like La Belle Lucie, but with two twists. If you clear a fan, you 
     Foundations start with <span id="seed-value"></span>
   </div>
 
-  <script type="text/javascript" src="js/combined.js"></script>
+  <script type="text/javascript" src="js/yui-all-min.js"></script>
+  
+    <script src="js/yui-breakout.js"></script>
+  
+    <script src="js/save-manager.js"></script>
+  
+    <script src="js/analytics.js"></script>
+
+    <script src="js/solitaire.js"></script>
+  
+    <script src="js/analytics.js"></script>
+  
+    <script src="js/util.js"></script>
+  
+    <script src="js/win-display.js"></script>
+  
+    <script src="js/iphone.js"></script>
+  
+    <script src="js/auto-stack-clear.js"></script>
+  
+    <script src="js/auto-turnover.js"></script>
+  
+    <script src="js/autoplay.js"></script>
+  
+    <script src="js/ie-opera-background-fix.js"></script>
+  
+    <script src="js/statistics.js"></script>
+  
+    <script src="js/display-seed-value.js"></script>
+  
+    <script src="js/solver-freecell.js"></script>
+  
+    <script src="js/agnes.js"></script>
+  
+    <script src="js/golf.js"></script>
+  
+    <script src="js/klondike.js"></script>
+  
+    <script src="js/klondike1t.js"></script>
+  
+    <script src="js/flowergarden.js"></script>
+  
+    <script src="js/fortythieves.js"></script>
+  
+    <script src="js/freecell.js"></script>
+  
+    <script src="js/grandclock.js"></script>
+  
+    <script src="js/montecarlo.js"></script>
+  
+    <script src="js/pyramid.js"></script>
+  
+    <script src="js/russian-solitaire.js"></script>
+  
+    <script src="js/scorpion.js"></script>
+  
+    <script src="js/spider.js"></script>
+  
+    <script src="js/spider1s.js"></script>
+  
+    <script src="js/spider2s.js"></script>
+  
+    <script src="js/spiderette.js"></script>
+  
+    <script src="js/tritowers.js"></script>
+  
+    <script src="js/will-o-the-wisp.js"></script>
+  
+    <script src="js/yukon.js"></script>
+  
+    <script src="js/simplesimon.js"></script>
+  
+    <script src="js/bakersdozen.js"></script>
+  
+    <script src="js/eightoff.js"></script>
+  
+    <script src="js/acesup.js"></script>
+  
+    <script src="js/alternations.js"></script>
+  
+    <script src="js/bakersgame.js"></script>
+  
+    <script src="js/baroness.js"></script>
+  
+    <script src="js/canfield.js"></script>
+  
+    <script src="js/doubleklondike.js"></script>
+  
+    <script src="js/thefan.js"></script>
+  
+    <script src="js/labellelucie.js"></script>
+  
+    <script src="js/calculation.js"></script>
+  
+    <script src="js/bisley.js"></script>
+  
+    <script src="js/kingalbert.js"></script>
+  
+    <script src="js/application.js"></script>
 </body>
 </html>

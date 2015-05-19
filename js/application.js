@@ -83,7 +83,7 @@
 			DoubleKlondike: "Double Klondike",
 			Eightoff: "Eight Off",
 			Klondike: "Klondike",
-			Klondike1T: "Klondike (Vegas style)",
+			Klondike1T: "Vegas Klondike",
 			TheFan: "The Fan",
 			FlowerGarden: "Flower Garden",
 			FortyThieves: "Forty Thieves",
@@ -471,7 +471,7 @@
 
 	Themes = {
 		all: {
-			"dots": {
+			dots: {
 				sizes: [148],
 				148: {
 					hiddenRankHeight: 17,
@@ -479,9 +479,10 @@
 					dimensions: [148, 200]
 				}
 			},
+		},
 
 		current: null,
-		defaultTheme: "jolly-royal",
+		defaultTheme: "dots",
 
 		/* theres no mechanism yet to load the appropriate deck depending on the scaled card width
 		 * so we just load the largest cards and call it a day :/
@@ -500,7 +501,7 @@
 		},
 
 		basePath: function (width) {
-			return this.current + "/" + this.snapToSize(width);
+			return "cards/" + this.current + "/" + this.snapToSize(width);
 		},
 
 		load: function (name) {
@@ -533,29 +534,21 @@
 	
 	Backgrounds = {
 		all: {
-			"green": {
-				image:"green.jpg",
-				size: "100%"
-		     	}, 
-			"vintage": {
-				image:"backgrounds/grungy-vintage.jpg",
-				repeat: true,
-			},
-			"circles": {
-				image: "backgrounds/retro-circles-army-green.jpg",
-				repeat: true,
-			},
-			"watercolor": {
-				image: "backgrounds/watercolor-grunge-ripe-apricot.jpg",
-				size: "cover",
-			},
-			"heart": {
-				image: "backgrounds/grunge-hearts-maroon-copper.jpg",
+			"wood": {
+				image:"backgrounds/wood.jpg",
 				size: "cover"
-			}
+		     	}, 
+            "red": {
+            	image:"backgrounds/red.gif",
+            	repeat: true
+             	}, 
+            "darkgreen": {
+            	image:"backgrounds/darkgreen.gif",
+            	repeat: true
+             	}, 
 		},
 		current: null,
-		defaultBackground: "green",
+		defaultBackground: "wood",
 		stylesheet: null,
 
 		load: function (name) {
