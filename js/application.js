@@ -1,5 +1,4 @@
 (function () {
-    YUI().use('dd-drag');
     
 	function cacheNode(selector) {
 		var node;
@@ -19,7 +18,8 @@
 	    /* remove {fetchCSS: false, bootstrap: false} during development when additional YUI modules are needed
 	     * TODO: generate this in the build script
 	     */
-	    yui = YUI({fetchCSS: false, bootstrap: false}), Y,
+	    // yui = YUI({fetchCSS: false, bootstrap: false}), Y,
+        yui = YUI().use('node', 'event', 'dd', 'dd-ddm-base', 'dd-drop', 'dd-drag', 'async-queue', 'dd-delegate'), Y,
 	    body = cacheNode("body"),
 	    games = {
 		"accordion": "Accordion",
