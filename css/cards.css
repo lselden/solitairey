@@ -486,18 +486,16 @@ button {
 	margin: 20px auto;
 }
 
-.description blockquote {display: none;}
+.description blockquote {display: none; font-size: 1em; padding: 0; margin: 0;}
 .description h3 {display: none;}
 .description p {display: none;}
-
 
 .popup {
 	width: 700px;
 	margin: 25px auto;
-	padding: 7px;
-	border-radius: 7px;
-	background: #222;
 	z-index: 1001;
+    border: 2px solid #333;
+    background-color: #EFEFEF;
 }
 
 .popup-content {
@@ -545,10 +543,6 @@ button {
 .backgrounds {
 	max-height: 470px;
 	overflow-y: scroll;
-}
-
-#background-options h3 {
-	margin-bottom: 10px;
 }
 
 .backgrounds .background {
@@ -611,7 +605,8 @@ button {
 }
 
 #options-chooser h2,
-#options-chooser h3 {
+#options-chooser h3,
+.description h3 {
     color: #333;
     font-size: 1.0em;
     border-bottom: 1px solid rgba(0,0,0, 0.7);
@@ -659,10 +654,16 @@ a.external {
 	z-index: -100;
 }
 
+.popup-bottom-button-bar button {
+    font-size: 0.8em;
+    padding: 5px 10px;
+}
+
 .infogroup {
 	height: 150px;
-	margin: 20px 0 0 20px;
 	width: 340px;
+    font-size: 0.8em;
+    margin: 10px 0 10px -3px;
 }
 
 .infonav, .infopanel {
@@ -689,7 +690,10 @@ a.external {
 
 .panelli {
 	margin: 0;
-	text-shadow: 1px 1px 1px #eee;
+}
+
+.panellabel {
+    font-weight: bold;
 }
 
 .panellabel::after {
@@ -702,23 +706,30 @@ a.external {
 }
 
 .stats-title {
-	background: rgba(220, 220, 220, 0.8) url(DownArrowSmall.png) no-repeat 97%;
+    font-size: 1em;
 	padding: 5px;
-	border-radius: 5px;
-	border: 3px solid transparent;
+	border: 2px solid #333;
 	z-index: 10;
+    background-color: #EFEFEF;
+}
+
+.stats-title:after {
+    content: "\25BE";
+    float: right;
+    padding-right: 10px;
+    margin-top: -2px;
 }
 
 .stats-title:hover {
-	border: 3px solid #000;
 	cursor: pointer;
 }
 
 .popup-title-content {
 	position: absolute;
-	background: white;
-	padding: 15px 0px 15px 40px;
-	margin-top: -5px;
+	background: #EFEFEF;
+    border: 1px solid #333;
+	padding: 10px 0px 10px 10px;
+	margin-top: -2px;
 	z-index: 5;
 }
 
@@ -726,11 +737,9 @@ a.external {
 	float: left;
 	width: 180px;
 	padding-left: 10px;
-	font-size: 18px;
-	line-height: 1.3;
+	font-size: 0.8em;
+	line-height: 1.5;
 	cursor: pointer;
-	text-shadow: 1px 1px 1px #f0f0f0;
-	border-radius: 5px;
 }
 
 .stats-gameli:hover {
