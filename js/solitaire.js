@@ -1227,7 +1227,7 @@ Y.Solitaire.Stack = {
 		imageSrc: function () {
 			var basename = this.images[this.field];
 
-			return basename ? Solitaire.Card.base.theme + "/" + basename : "trans.gif";
+			return basename ? Solitaire.Card.base.theme + "/" + basename : "images/trans.gif";
 		},
 
 		layout: function (layout) {
