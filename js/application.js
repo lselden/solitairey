@@ -83,7 +83,7 @@
 			DoubleKlondike: "Double Klondike",
 			Eightoff: "Eight Off",
 			Klondike: "Klondike",
-			Klondike1T: "Vegas Klondike",
+			Klondike1T: "Single Draw Klondike",
 			TheFan: "The Fan",
 			FlowerGarden: "Flower Garden",
 			FortyThieves: "Forty Thieves",
