@@ -159,7 +159,22 @@
 		    visible = false;
 
 		function sourceNode() {
-			return Y.one("#" + active.name);
+			var srcNode = Y.one("#" + active.name),
+				activeGame;
+
+			// HACK: active.name can be either of the form "MonteCarlo" or "monte-carlo" at this point, depending
+			// on whether we've just switched games or not. Without this hack, you don't see rules unless you switch games.
+			// A better fix would be to be more consistent with active.name.
+			if (!srcNode) {
+				for (m in games) {
+					if (games[m] === active.name) {
+						srcNode = Y.one("#" + m);
+						break;
+					}
+				}
+			}
+
+			return srcNode;
 		}
 
 		return {
@@ -728,9 +743,6 @@
 			Y.Solitaire.Analytics.track("Donations", "Click", "Paypal button");
 		}, Y.one("#donate"));
 
-
-		Y.on("click", hideChromeStoreLink, Y.one(".chromestore"));
-
 		Y.delegate("click", showDescription, "#descriptions", "li");
 
 		Y.on("click", hideMenus, ".close-chooser");
@@ -837,7 +849,6 @@
 
 		Preloader.preload();
 		Preloader.loaded(function () {
-			showChromeStoreLink();
 			if (save.serialized !== "") {
 				clearDOM();
 				active.game = lookupGame(active.name);
@@ -892,19 +903,6 @@
 			nameMap: nameMap,
 			currentTheme: function () { return Themes.current; }
 		};
-	}
-
-        function hideChromeStoreLink() {
-		Y.one(".chromestore").addClass("hidden");
-		localStorage["disable-chromestore-link"] = "true";
-        }
-
-	function showChromeStoreLink() {
-		var key = "disable-chromestore-link";
-
-		if (Y.UA.chrome && (localStorage[key] !== "true" || !Y.Cookie.get(key, Boolean))) {
-			Y.one(".chromestore").removeClass("hidden");
-		}
 	}
 
 	var Preloader = {
