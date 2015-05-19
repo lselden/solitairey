@@ -577,7 +577,6 @@ Y.Solitaire.Events = {
 			var card = e.target.getData("target");
 
 			if (card.dragging) { return; }
-            if (stack) { return; }
 
 			card.dragging = false;
 			card.turnOver(e);
