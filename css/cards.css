@@ -138,6 +138,10 @@ p {
 	display: none;
 }
 
+#game-chooser-contents {
+    overflow: scroll;
+}
+
 #game-chooser-contents, #description {
 	display: inline-block;
 }
