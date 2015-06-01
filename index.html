@@ -13,7 +13,38 @@
   <link href='http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
   
   <script language="javascript">
-  	// document.ontouchmove = function(e){ e.preventDefault(); }
+ /**
+  * ScrollFix v0.1
+  * http://www.joelambert.co.uk
+  *
+  * Copyright 2011, Joe Lambert.
+  * Free to use under the MIT license.
+  * http://www.opensource.org/licenses/mit-license.php
+  */
+  
+  var ScrollFix = function(elem) {
+      // Variables to track inputs
+      var startY, startTopScroll;
+
+      elem = elem || document.querySelector(elem);
+
+      // If there is no element, then do nothing  
+      if(!elem)
+          return;
+
+      // Handle the start of interactions
+      elem.addEventListener('touchstart', function(event){
+          startY = event.touches[0].pageY;
+          startTopScroll = elem.scrollTop;
+
+          if(startTopScroll <= 0)
+              elem.scrollTop = 1;
+
+          if(startTopScroll + elem.offsetHeight >= elem.scrollHeight)
+              elem.scrollTop = elem.scrollHeight - elem.offsetHeight - 1;
+      }, false);
+  };
+  
 	if (window.navigator.standalone) {
 	    document.write("<style>#statusbar{ min-height:20px; background-color: #333; }</style>");
 	}
@@ -61,8 +92,8 @@
 		<button class="popup-button close-chooser">Done</button>
 	</div></div>
   
-	<div id="game-chooser">
-		<div id="game-chooser-contents">
+	<div id="game-chooser" class="scrollable">
+		<div id="game-chooser-contents" class="scrollable">
 			<ul id="descriptions">
 				<li id="acesup">
 					<h2>Aces Up</h2>
