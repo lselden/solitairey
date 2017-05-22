@@ -610,14 +610,14 @@
 		set() {
 			let selected = this.all[this.current];
 			if (selected.gradient) {
-				this.imageNode().hide();
+				if (this.imageNode()) { this.imageNode().hide(); }
 				this.node().setStyle('backgroundImage', selected.gradient);
 			} else if (selected.repeat) {
-				this.imageNode().hide();
+				if (this.imageNode()) { this.imageNode().hide(); }
 				this.node().setStyle('backgroundImage', 'url(' + selected.image + ')');
 			} else {
 				this.node().setStyle('backgroundImage', 'none');
-				this.imageNode().set('src', selected.image).show();
+				if (this.imageNode()) { this.imageNode().set('src', selected.image).show(); }
 			}
 		},
 
