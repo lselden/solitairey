@@ -1,21 +1,21 @@
 if (!Array.prototype.indexOf) {
-  Array.prototype.indexOf = function(elt /*, from*/)  {  
-    var len = this.length >>> 0;  
-  
-    var from = Number(arguments[1]) || 0;  
-    from = (from < 0)  
-         ? Math.ceil(from)  
-         : Math.floor(from);  
-    if (from < 0)  
-      from += len;  
-  
-    for (; from < len; from++) {  
-      if (from in this &&  
-          this[from] === elt)  
-        return from;  
-    }  
-    return -1;  
-  };  
+  Array.prototype.indexOf = function(elt /*, from*/)  {
+    var len = this.length >>> 0;
+
+    var from = Number(arguments[1]) || 0;
+    from = (from < 0)
+         ? Math.ceil(from)
+         : Math.floor(from);
+    if (from < 0)
+      from += len;
+
+    for (; from < len; from++) {
+      if (from in this &&
+          this[from] === elt)
+        return from;
+    }
+    return -1;
+  };
 }
 
 Array.prototype.flatten = function () {
@@ -156,7 +156,8 @@ Y.extend(CardDelegate, Y.DD.Delegate, {
 Y.mix(Solitaire, {
 	activeCard: null,
 	moves: null,
-	selector: "body",
+	// selector: "body",
+    selector: "#canvas",
 	offset: {left: 50, top: 70},
 	padding: {x: 50, y: 50},
 	widthScale: 0,
@@ -178,7 +179,7 @@ Y.mix(Solitaire, {
 	width: function () { return this.Card.base.width * this.widthScale; },
 	height: function () { return this.Card.base.height * 4.2; },
 	maxStackHeight: function () {
-		return Solitaire.Application.windowHeight - 
+		return Solitaire.Application.windowHeight -
 			normalize(this.Tableau.stackConfig.layout.top) -
 			normalize(Game.offset.top);
 	},
@@ -381,7 +382,7 @@ Y.mix(Solitaire, {
 			container: Solitaire.selector,
 			nodes: ".card"
 		});
-		
+
 		del.dd.plug(Y.Plugin.DDProxy, {
 			borderStyle: "none",
 			moveOnEnd: false
@@ -473,7 +474,7 @@ Y.mix(Solitaire, {
 					}
 
 					return card;
-				});	
+				});
 
 				stack.update();
 			});
@@ -638,7 +639,7 @@ Y.Solitaire.Events = {
 			    containerXY = root.getXY(),
 
 			    cards,
-			    
+
 			    stack,
 			    proxyStack = target.proxyStack;
 
@@ -678,7 +679,7 @@ Y.Solitaire.Events = {
 			var stack = Solitaire.activeCard.proxyStack,
 			    target,
 			    first;
-		       
+
 			if (stack) {
 				first = stack.first();
 
@@ -809,7 +810,7 @@ Y.Solitaire.Card = {
 		origin: {
 			left: function () {
 				var offset = Solitaire.container().getX();
-				
+
 				return -offset - Y.Solitaire.Card.width;
 			},
 			top: function () {
@@ -875,7 +876,7 @@ Y.Solitaire.Card = {
 				this.suit + this.rank;
 
 			src += ".png";
-			
+
 			return src;
 		},
 
@@ -967,7 +968,7 @@ Y.Solitaire.Card = {
 
 			Solitaire.container().append(node);
 		},
-		
+
 		destroyNode: function () {
 			var n = this.node;
 
@@ -1344,7 +1345,7 @@ Y.Solitaire.Stack = {
 			this.rankHeight = Math.floor(rhVisible);
 		},
 
-		first: function () { 
+		first: function () {
 			return this.cards[0];
 		},
 
@@ -1475,7 +1476,7 @@ Y.Solitaire.Animation = {
 			    zIndex = to.zIndex,
 			    duration,
 			    $this = this;
-		       
+
 			if (from.top === to.top && from.left === to.left) { return; }
 
 			if (this.dealing) {
@@ -1548,7 +1549,7 @@ Y.Solitaire.Animation = {
 
 			anim.run();
 		},
-	
+
 		flip: function(card, delay) {
 			if (!(this.animate && card.node)) {
 				card.setImageSrc();
