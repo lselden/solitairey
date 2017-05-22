@@ -1,3 +1,10 @@
+@font-face {
+	font-family: 'Questrial';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Questrial'), local('Questrial-Regular'), url('font/questrial.woff') format('woff');
+}
+
 html, body, div, ul, li, p, img, h1, h2, h3, h4, h5, h6 {
 	position: relative;
 	margin: 0;
@@ -11,7 +18,7 @@ html {
 
 body {
 	background-attachment: fixed;
-	font-family: 'Karla', sans-serif;
+	font-family: helvetica, verdana, sans;
 	z-index: -99;
 	overflow: hidden;
 }
@@ -42,11 +49,17 @@ a {
 }
 
 .stack {
-	z-index: 1;
+	z-index: -10;
+	box-shadow: 0px 0px 6px rgba(128, 128, 128, 0.5);
 }
 
 .playable {
 	cursor: pointer;
+	border-radius: 7px;
+	-webkit-transition: box-shadow 0.2s linear;
+	-moz-transition: box-shadow 0.2s linear;
+	-ms-transition: box-shadow 0.2s linear;
+	transition: box-shadow 0.2s linear;
 }
 
 .playable:hover {
@@ -58,32 +71,57 @@ a {
 }
 
 .top-menu {
-	border-style: solid;
+	/*border-style: solid;
 	background: #eee;
+	background: -webkit-linear-gradient(#fff, #ddd);
+	background: -moz-linear-gradient(#fff, #ddd);
+	background: -o-linear-gradient(#fff, #ddd);
+	background: -ms-linear-gradient(#fff, #ddd);
+	box-shadow: 0 1px 12px 0.5px #000;*/
 }
 
 #menu {
-	display: table;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: center;
+	/*display: table;*/
 	height: 35px;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
+	border-radius: 0 0 15px 15px;
 	color: #000;
 	font-weight: bold;
 	font-size: 16px;
 	list-style: none;
+	width: 100%;
+	position: absolute;
 }
 
 #menu li {
 	height: 35px;
-	float: left;
+	/*float: left;*/
 	border-right: 1px solid #444;
+	flex: 0 0 auto;
+	background: rgba(255,255,255,0.5);
+	background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(240, 240, 240, 0.5));
+    text-shadow: 0px 1px 2px rgba(255,255,255, 0.5);
+    box-shadow: 0 2px 6px 0.5px rgba(0, 0, 0, 0.5);
 }
 
 #menu li.end {
 	border: none;
+	border-radius: 0 0 15px 0;
+}
+
+#menu li.begin {
+	border-radius: 0 0 0 15px;
 }
 
 #menu li:hover {
-	background: #bbb;
+	background: #bbb -webkit-linear-gradient(#fff, #bbb);
+	background: #bbb -moz-linear-gradient(#fff, #bbb);
+	background: #bbb -ms-linear-gradient(#fff, #bbb);
+	background: #bbb -o-linear-gradient(#fff, #bbb);
 }
 
 #menu a {
@@ -120,8 +158,8 @@ p {
 }
 
 #game-chooser h2 {
-	font: 20px 'Karla';
-	
+	font: 20px Questrial;
+
 	text-align: center;
 	padding: 6px 0 6px 0;
 	background: rgba(255, 255, 255, 0.5);
@@ -497,41 +535,24 @@ button:hover {
 .description h3 {display: none;}
 .description p {display: none;}
 
-.chromestore {
-	position: fixed;
-	right: 0;
-	bottom: 0;
-}
-
-.chromestore .hide {
-	display: block;
-	font: 20px 'Karla';
-	text-align: right;
-	padding: 0 7px 5px 0;
-}
-
-.chromestore .hide:hover {
-	color: #EEC;
-}
-
-.chromestore img {
-	background: #fff;
-	display: block;
-}
-
 .popup {
 	width: 700px;
 	margin: 25px auto;
 	padding: 7px;
 	border-radius: 7px;
 	background: #222;
+	box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
 	z-index: 1001;
 }
 
 .popup-content {
 	background-color: #fff;
+	background: -webkit-linear-gradient(white 50%, #ddd);
+	background: -moz-linear-gradient(white 50%, #ddd);
+	background: -ms-linear-gradient(white 50%, #ddd);
+	background: -o-linear-gradient(white 50%, #ddd);
 	padding: 20px 20px 70px 20px;
-	font-family: 'Karla';
+	font-family: Questrial;
 	font-size: 20px;
 }
 
@@ -542,16 +563,23 @@ button:hover {
 }
 
 .tabview .yui3-tab {
+	border-radius: 6px 6px 0 0;
 	margin-right: 10px;
 	padding: 3px 6px;
+	text-shadow: 1px 1px 1px #ccc;
 }
 
 .tabview .yui3-tab-selected {
 	background-color: #111;
+	background: -webkit-linear-gradient(#111 50%, #666);
+	background: -moz-linear-gradient(#111 50%, #666);
+	background: -ms-linear-gradient(#111 50%, #666);
+	background: -o-linear-gradient(#111 50%, #666);
 }
 
 .tabview .yui3-tab-selected .yui3-tab-label {
 	color: #eee;
+	text-shadow: 1px 1px 1px #555;
 }
 
 .tabview .yui3-tab-label:focus {
@@ -609,6 +637,10 @@ button:hover {
 	width: auto;
 	float: right;
 	background-color: #ddd;
+	background-image: -webkit-linear-gradient(#f0f0f0 50%, #bbb);
+	background-image: -moz-linear-gradient(#f0f0f0 50%, #bbb);
+	background-image: -ms-linear-gradient(#f0f0f0 50%, #bbb);
+	background-image: -o-linear-gradient(#f0f0f0 50%, #bbb);
 	border:0;
 }
 
@@ -724,6 +756,7 @@ a.external {
 	background: white;
 	padding: 15px 0px 15px 40px;
 	margin-top: -5px;
+	box-shadow: 0 5px 5px 1px rgba(50, 50, 50, 0.5);
 	z-index: 5;
 }
 
@@ -784,4 +817,13 @@ a.external {
 #confirmation-popup {
 	top: 120px;
 	width: 300px;
+}
+
+#canvas {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	box-sizing: border-box;
 }

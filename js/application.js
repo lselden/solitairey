@@ -3,7 +3,7 @@
 		var node;
 
 		return function () {
-			if (!node) { 
+			if (!node) {
 				node = Y.one(selector);
 			}
 			return node;
@@ -233,7 +233,7 @@
 		select: function (game) {
 			var node = Y.one("#" + game + "> div"),
 			    previous = this.selected;
-			
+
 			if (previous !== game) {
 				this.unSelect();
 			}
@@ -345,8 +345,12 @@
 					});
 
 					createList(Backgrounds, "#background-options .backgrounds", function (collection) {
-						return Y.Node.create("<li class=background></li>")
-							.setStyle("backgroundImage", "url(" + collection.all[collection.current].image + ")");
+						var el = Y.Node.create("<li class=background></li>");
+						var bg = collection.all[collection.current];
+						if (bg.gradient) {
+							return el.setStyle('backgroundImage', bg.gradient);
+						}
+						return el.setStyle("backgroundImage", "url(" + bg.image + ")");
 					});
 				}
 
@@ -481,7 +485,8 @@
 			},
 
 		current: null,
-		defaultTheme: "jolly-royal",
+		// defaultTheme: "jolly-royal",
+		defaultTheme: "paris",
 
 		/* theres no mechanism yet to load the appropriate deck depending on the scaled card width
 		 * so we just load the largest cards and call it a day :/
@@ -507,7 +512,7 @@
 			var Solitaire = Y.Solitaire,
 			    base = Solitaire.Card.base,
 			    sizes;
-
+			window.Solitaire = Solitaire;
 			if (!(name in this.all)) {
 				name = this.defaultTheme;
 			}
@@ -530,32 +535,19 @@
 			}, true);
 		}
 	},
-	
+
 	Backgrounds = {
 		all: {
 			"green": {
 				image:"green.jpg",
 				size: "100%"
-		     	}, 
-			"vintage": {
-				image:"backgrounds/grungy-vintage.jpg",
-				repeat: true,
-			},
-			"circles": {
-				image: "backgrounds/retro-circles-army-green.jpg",
-				repeat: true,
-			},
-			"watercolor": {
-				image: "backgrounds/watercolor-grunge-ripe-apricot.jpg",
-				size: "cover",
-			},
-			"heart": {
-				image: "backgrounds/grunge-hearts-maroon-copper.jpg",
-				size: "cover"
+		     	},
+			"black": {
+				gradient: 'linear-gradient(#333,#000)'
 			}
 		},
 		current: null,
-		defaultBackground: "green",
+		defaultBackground: "black",
 		stylesheet: null,
 
 		load: function (name) {
@@ -572,7 +564,10 @@
 			    node;
 
 			node = this.node();
-			if (selected.repeat) {
+			if (selected.gradient) {
+				this.imageNode().hide();
+				this.node().setStyle("backgroundImage", selected.gradient);
+			} else if (selected.repeat) {
 				this.imageNode().hide();
 				this.node().setStyle("backgroundImage", "url(" + selected.image + ")");
 			} else {
@@ -591,7 +586,7 @@
 			    ratioWidth, ratioHeight,
 			    ratio;
 
-			if (selected.repeat) { return; }
+			if (selected.repeat || selected.gradient) { return; }
 
 			if (selected.size === "cover") {
 				ratioWidth = width / winWidth;
@@ -736,8 +731,6 @@
 		}, Y.one("#donate"));
 
 
-		Y.on("click", hideChromeStoreLink, Y.one(".chromestore"));
-
 		Y.delegate("click", showDescription, "#descriptions", "li");
 
 		Y.on("click", hideMenus, ".close-chooser");
@@ -745,6 +738,12 @@
 		Y.one("document").on("keydown", function (e) {
 			if (e.keyCode === 27) {
 				hideMenus();
+			}
+		});
+		document.body.addEventListener('keypress', function (event) {
+			if(event.code === 'KeyZ' && event.ctrlKey) {
+				//active.game.undo();
+				document.querySelector('#undo').click();
 			}
 		});
 
@@ -809,6 +808,7 @@
 		    offset = game.offset,
 		    width = el.get("winWidth") - padding.x,
 		    height = el.get("winHeight") - padding.y,
+			screenWidth = el.get("winWidth"),
 		    ratio = 1;
 
 		Y.Solitaire.Application.windowHeight = height;
@@ -844,7 +844,6 @@
 
 		Preloader.preload();
 		Preloader.loaded(function () {
-			showChromeStoreLink();
 			if (save.serialized !== "") {
 				clearDOM();
 				active.game = lookupGame(active.name);
@@ -901,20 +900,7 @@
 		};
 	}
 
-        function hideChromeStoreLink() {
-		Y.one(".chromestore").addClass("hidden");
-		localStorage["disable-chromestore-link"] = "true";
-        }
-
-	function showChromeStoreLink() {
-		var key = "disable-chromestore-link";
-
-		if (Y.UA.chrome && (localStorage[key] !== "true" || !Y.Cookie.get(key, Boolean))) {
-			Y.one(".chromestore").removeClass("hidden");
-		}
-	}
-
-	var Preloader = {
+    var Preloader = {
 		loadingCount: 0,
 		showFade: true,
 
@@ -931,7 +917,7 @@
 				}
 			}
 		},
-	
+
 		load: function (path) {
 			var image = new Image;
 

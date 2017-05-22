@@ -1,6 +1,7 @@
 YUI.add("pyramid", function (Y) {
 
 var Solitaire = Y.Solitaire,
+    Util = Solitaire.Util,
     Pyramid = Y.Solitaire.Pyramid = instance(Solitaire, {
 	fields: ["Foundation", "Deck", "Waste", "Tableau"],
 	width: function () { return Solitaire.Card.base.width * 10; },
@@ -69,10 +70,20 @@ var Solitaire = Y.Solitaire,
 	turnOver: function () {
 		var deck = this.deck.stacks[0],
 		    waste = this.waste.stacks[0];
-
-		if (deck.cards.length === 1) { return; }
-		deck.last().moveTo(waste);
+		if (deck.cards.length <= 1) {
+            this.cycleDeck();
+        } else {
+            deck.last().moveTo(waste);
+        }
 	},
+
+    cycleDeck: function () {
+        var deck = this.deck.stacks[0],
+		    waste = this.waste.stacks[0];
+        waste.cards.shuffle();
+        Util.moveWasteToDeck.call(this);
+        deck.last().faceUp();
+    },
 
 	height: function () { return this.Card.base.height * 4.85; },
 
@@ -113,6 +124,7 @@ var Solitaire = Y.Solitaire,
 				active.moveTo(foundation);
 			});
 
+            Solitaire.game.cycleDeck();
 			Solitaire.endTurn();
 		}
 	}),
@@ -286,4 +298,4 @@ Y.mix(Pyramid.Deck.Stack, {
 
 Pyramid.Waste.Stack.updateDragGroups = Pyramid.Deck.Stack.updateDragGroups;
 
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: ["solitaire", "util"]});
